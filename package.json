@@ -4,9 +4,31 @@
   "description": "Custom desktop player",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron-forge start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
+  "fileAssociations": [
+    {
+      "ext": "mp4",
+      "name": "MP4 Video",
+      "description": "MP4 Video File",
+      "role": "Editor"
+    },
+    {
+      "ext": "mov",
+      "name": "MOV Video",
+      "description": "MOV Video File",
+      "role": "Editor"
+    },
+    {
+      "ext": "avi",
+      "name": "AVI Video",
+      "description": "AVI Video File",
+      "role": "Editor"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GidoKristoffel/desktop-custom-player.git"
@@ -18,6 +40,18 @@
   },
   "homepage": "https://github.com/GidoKristoffel/desktop-custom-player#readme",
   "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron/fuses": "^1.8.0",
     "electron": "^30.0.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "ipc": "^0.0.1"
   }
 }
