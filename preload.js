@@ -2,9 +2,17 @@ const { ipcRenderer, remote } = require('electron');
 
 process.once("loaded", () => {
     window.process = process;
-    console.log('process: ', process);
-    console.log('window: ', window);
 });
+
+let data = ipcRenderer.sendSync('get-file-data');
+let videoUrl = '';
+if (data ===  null) {
+    console.log("There is no file");
+} else {
+    // Do something with the file.
+    console.log(data);
+    videoUrl = data;
+}
 
 window.addEventListener('DOMContentLoaded', () => {
     const replaceText = (selector, text) => {
@@ -12,17 +20,10 @@ window.addEventListener('DOMContentLoaded', () => {
         if (element) element.innerText = text
     }
 
+    const videoEl = document.getElementById('video');
+    if (videoEl) videoEl.src = data;
+
     for (const type of ['chrome', 'node', 'electron']) {
         replaceText(`${type}-version`, process.versions[type])
     }
-
-    const videoPath = document.getElementById('video-path');
-    videoPath.innerText = 'Hello';
-
-    ipcRenderer.on('play-video', (event, filePath) => {
-        const videoElement = document.getElementById('videoPlayer');
-        videoElement.src = filePath;
-        videoElement.play();
-    });
-    console.log('remote: ', remote);
 })
