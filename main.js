@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron/main')
 const path = require('node:path')
+const { ipcMain } = require('electron');
 
 function createWindow () {
     const win = new BrowserWindow({
@@ -8,26 +9,18 @@ function createWindow () {
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         }
+    });
+
+    ipcMain.on('get-file-data', function(event) {
+        let data = null;
+        if (process.platform == 'win32' && process.argv.length >= 2) {
+            let openFilePath = process.argv[1]
+            data = openFilePath
+        }
+        event.returnValue = data
     })
 
-    win.loadFile('index.html');
-    console.log('Loading!!!');
-
-    app.on('second-instance', (event, commandLine, workingDirectory) => {
-        const videoFilePath = commandLine[2];
-        console.log('Second-instance');
-        event.log(videoFilePath);
-        if (videoFilePath) {
-            win.webContents.send('play-video', videoFilePath);
-        }
-    });
-
-    app.on('open-file', (event, filePath) => {
-        console.log('open-file');
-        console.log('filePath: ', filePath);
-        // event.preventDefault(); // Отменяем открытие файла по умолчанию
-        // mainWindow.webContents.send('play-video', filePath); // Отправляем путь к видеофайлу в рендерерный процесс
-    });
+    win.loadFile('index.html').then();
 }
 
 app.whenReady().then(() => {
