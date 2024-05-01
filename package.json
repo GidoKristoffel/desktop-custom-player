@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
+    "fluent-ffmpeg": "^2.1.2",
     "ipc": "^0.0.1"
   },
   "build": {
