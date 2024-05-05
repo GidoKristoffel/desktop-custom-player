@@ -50,13 +50,15 @@
     "@electron-forge/plugin-fuses": "^7.4.0",
     "@electron/fuses": "^1.8.0",
     "browserify": "^17.0.0",
-    "electron": "^30.0.1"
+    "electron": "^30.0.2"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
+    "electron-webpack": "^2.8.2",
     "fluent-ffmpeg": "^2.1.2",
     "ipc": "^0.0.1",
-    "wcjs-player": "^6.0.1"
+    "wcjs-player": "^6.0.1",
+    "webpack": "^4.47.0"
   },
   "build": {
     "files": [
