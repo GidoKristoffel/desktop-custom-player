@@ -32,4 +32,12 @@ window.addEventListener('DOMContentLoaded', () => {
         'assets/images/close.svg',
         () => ipcRenderer.invoke('quit-app').then()
     );
+
+    button.addToggleIcon(
+        'play-btn',
+        'assets/images/play.svg',
+        'assets/images/pause.svg',
+        () => {},
+        () => {}
+    );
 });
