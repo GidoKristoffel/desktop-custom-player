@@ -2,7 +2,7 @@
   "name": "desktop-custom-player",
   "version": "1.0.0",
   "description": "Custom desktop player",
-  "main": "main.js",
+  "main": "bundle.js",
   "scripts": {
     "babel-start": "npm run build && electron-forge start",
     "start": "electron-forge start",  
