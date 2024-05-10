@@ -41,6 +41,9 @@ window.addEventListener('DOMContentLoaded', () => {
             const video = document.getElementById('video');
             video.play();
         },
-        () => {}
+        () => {
+            const video = document.getElementById('video');
+            video.pause();
+        }
     );
 });
