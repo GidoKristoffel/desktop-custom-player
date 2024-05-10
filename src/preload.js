@@ -37,7 +37,10 @@ window.addEventListener('DOMContentLoaded', () => {
         'play-btn',
         'assets/images/play.svg',
         'assets/images/pause.svg',
-        () => {},
+        () => {
+            const video = document.getElementById('video');
+            video.play();
+        },
         () => {}
     );
 });
