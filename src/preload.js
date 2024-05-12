@@ -46,4 +46,12 @@ window.addEventListener('DOMContentLoaded', () => {
             video.pause();
         }
     );
+
+    button.addDefaultIcon(
+        'speed',
+        'assets/images/speed.svg',
+        'assets/images/speed.svg',
+        () => {},
+        () => {}
+    )
 });
