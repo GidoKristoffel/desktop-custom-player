@@ -2,7 +2,7 @@
   "name": "desktop-custom-player",
   "version": "1.0.0",
   "description": "Custom desktop player",
-  "main": "bundle.js",
+  "main": "./.webpack/main",
   "scripts": {
     "babel-start": "npm run build && electron-forge start",
     "start": "electron-forge start",
@@ -66,5 +66,28 @@
     "files": [
       "build/*"
     ]
+  },
+  "config": {
+    "forge": {
+      "plugins": [
+        {
+          "name": "@electron-forge/plugin-webpack",
+          "config": {
+            "mainConfig": "./webpack.main.config.js",
+            "renderer": {
+              "config": "./webpack.renderer.config.js",
+              "entryPoints": [{
+                "name": "main_window",
+                "html": "./src/renderer/index.html",
+                "js": "./src/renderer/index.js",
+                "preload": {
+                  "js": "./src/preload.js"
+                }
+              }]
+            }
+          }
+        }
+      ]
+    }
   }
 }
