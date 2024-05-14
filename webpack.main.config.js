@@ -5,14 +5,8 @@ module.exports = {
     entry: './main.js',
     target: 'electron-main',
     output: {
-        path: path.resolve(__dirname),
-        filename: 'bundle.js'
-    },
-    resolve: {
-        alias: {
-            'electron/main': path.resolve(__dirname, 'electron/main.js'),
-            'node:path': 'path'
-        }
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.bundle.js'
     },
     module: {
         rules: [
