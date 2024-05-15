@@ -78,11 +78,11 @@
               "config": "./webpack.renderer.config.js",
               "entryPoints": [
                 {
-                  "html": "./src/index.html",
-                  "js": "./src/renderer.ts",
+                  "html": "./index.html",
+                  "js": "./src/main.js",
                   "name": "main_window",
                   "preload": {
-                    "js": "./src/preload.ts"
+                    "js": "./src/preload.js"
                   }
                 }
               ]
