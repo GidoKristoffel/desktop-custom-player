@@ -54,4 +54,12 @@ window.addEventListener('DOMContentLoaded', () => {
         () => {},
         () => {}
     )
+
+    button.addDefaultIcon(
+        'skip',
+        'assets/images/skip.svg',
+        'assets/images/skip.svg',
+        () => {},
+        () => {}
+    )
 });
