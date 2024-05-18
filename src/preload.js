@@ -74,7 +74,7 @@ class Button {
 
         const iconContainer = document.getElementById(containerId);
         const icon = iconContainer.children[0];
-        icon.addEventListener('click', click);
+        iconContainer.addEventListener('click', click);
     }
 
     addToggleIcon(containerId, defaultImgSrc, imgSrc, defaultClick, click) {
@@ -82,7 +82,9 @@ class Button {
 
         const iconContainer = document.getElementById(containerId);
         const icon = iconContainer.children[0];
-        icon.addEventListener('click', (event) => {
+        iconContainer.addEventListener('click', (event) => {
+            console.log(icon.src);
+            console.log(defaultImgSrc);
             if (event.target['attributes'].src.value === defaultImgSrc) {
                 defaultClick().then(() => this.icon.updateSrc(icon, imgSrc));
             } else {
