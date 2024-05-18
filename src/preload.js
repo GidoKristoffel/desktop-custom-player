@@ -1,6 +1,6 @@
 const { ipcRenderer } = require('electron');
-const Icon = require("./lib/icon");
-const Button = require("./lib/button");
+// const Icon = require("./lib/icon");
+// const Button = require("./lib/button");
 
 let data = ipcRenderer.sendSync('get-file-data');
 let videoUrl = '';
@@ -63,3 +63,44 @@ window.addEventListener('DOMContentLoaded', () => {
         () => {}
     )
 });
+
+class Button {
+    constructor() {
+        this.icon = new Icon();
+    }
+
+    addDefaultIcon(containerId, imgSrc, click) {
+        this.icon.add(containerId, imgSrc);
+
+        const iconContainer = document.getElementById(containerId);
+        const icon = iconContainer.children[0];
+        icon.addEventListener('click', click);
+    }
+
+    addToggleIcon(containerId, defaultImgSrc, imgSrc, defaultClick, click) {
+        this.icon.add(containerId, defaultImgSrc);
+
+        const iconContainer = document.getElementById(containerId);
+        const icon = iconContainer.children[0];
+        icon.addEventListener('click', (event) => {
+            if (event.target['attributes'].src.value === defaultImgSrc) {
+                defaultClick().then(() => this.icon.updateSrc(icon, imgSrc));
+            } else {
+                click().then(() => this.icon.updateSrc(icon, defaultImgSrc));
+            }
+        });
+    }
+}
+
+class Icon {
+    add(containerId, imgSrc) {
+        const iconContainer = document.getElementById(containerId);
+        const iconImg = document.createElement('img');
+        iconImg.src = imgSrc;
+        iconContainer.appendChild(iconImg);
+    }
+
+    updateSrc(icon, src) {
+        icon.src = src;
+    }
+}

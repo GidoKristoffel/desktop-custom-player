@@ -8,11 +8,11 @@ function createWindow () {
         titleBarStyle: 'hidden',
         icon: 'assets/images/icon.png',
         webPreferences: {
-            preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY
+            preload: path.join(__dirname, 'src', 'preload.js')
         }
     });
 
-    win.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+    // win.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
     watchGetFileData();
     watchQuitApp();
