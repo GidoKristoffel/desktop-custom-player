@@ -83,9 +83,7 @@ class Button {
         const iconContainer = document.getElementById(containerId);
         const icon = iconContainer.children[0];
         iconContainer.addEventListener('click', (event) => {
-            console.log(icon.src);
-            console.log(defaultImgSrc);
-            if (event.target['attributes'].src.value === defaultImgSrc) {
+            if (icon.attributes.src.value === defaultImgSrc) {
                 defaultClick().then(() => this.icon.updateSrc(icon, imgSrc));
             } else {
                 click().then(() => this.icon.updateSrc(icon, defaultImgSrc));
