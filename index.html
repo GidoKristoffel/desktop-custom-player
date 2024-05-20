@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Lumiere moon player</title>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <meta content="script-src 'self' 'unsafe-inline';" http-equiv="Content-Security-Policy"/>
     <style>
         body {
             margin: 0;
@@ -82,26 +82,32 @@
         #control img {
             display: block;
         }
+
+        #timeline {
+            width: 100%;
+            height: 6px;
+            border: 3px solid #45b7e5;
+        }
     </style>
 </head>
-    <body>
-        <div id="title-bar">
-            <div id="title-bar-icon"></div>
-            <div class="title-bar-btn-container">
-                <div id="title-bar-collapse" class="title-bar-btn"></div>
-                <div id="title-bar-minimize" class="title-bar-btn"></div>
-                <div id="title-bar-close" class="title-bar-btn"></div>
-            </div>
+<body>
+<div id="title-bar">
+    <div id="title-bar-icon"></div>
+    <div class="title-bar-btn-container">
+        <div class="title-bar-btn" id="title-bar-collapse"></div>
+        <div class="title-bar-btn" id="title-bar-minimize"></div>
+        <div class="title-bar-btn" id="title-bar-close"></div>
+    </div>
+</div>
+<video id="video" src=""></video>
+<div id="control">
+    <div id="play-btn"></div>
+    <div id="timeline"></div>
+    <div id="control-settings">
+        <div id="speed">
+            <div id="speed-modal"></div>
         </div>
-        <video src="" id="video"></video>
-        <div id="control">
-            <div id="play-btn"></div>
-            <div id="timeline"></div>
-            <div id="control-settings">
-                <div id="speed">
-                    <div id="speed-modal"></div>
-                </div>
-            </div>
-        </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>
