@@ -6,7 +6,7 @@ function createWindow () {
         width: 800,
         height: 600,
         titleBarStyle: 'hidden',
-        icon: 'assets/images/icon.png',
+        icon: 'assets/images/logo.png',
         webPreferences: {
             preload: path.join(__dirname, 'src', 'preload.js')
         }

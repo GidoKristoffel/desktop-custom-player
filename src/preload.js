@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (videoEl) videoEl.src = data;
 
     const icon = new Icon();
-    icon.add('title-bar-icon', 'assets/images/icon.png');
+    icon.add('title-bar-icon', 'assets/images/logo.svg');
 
     const button = new Button();
     button.addDefaultIcon(
