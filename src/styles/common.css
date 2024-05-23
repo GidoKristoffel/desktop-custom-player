@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Calibri, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #efcda5;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+}
