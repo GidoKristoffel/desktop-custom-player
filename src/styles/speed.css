@@ -1,19 +1,23 @@
+#speed {
+    position: relative;
+}
+
 #speed-btn {
     position: relative;
     cursor: pointer;
     width: 32px;
+    height: 32px;
+    min-width: 32px;
     border: 1px solid #1d1e1a;
     box-sizing: border-box;
-    padding: 6px;
     user-select: none;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
 }
 
 #speed-btn img {
-    width: 18px;
-    height: 18px;
+    width: 24px;
 }
 
 #speed-btn::after {
@@ -24,10 +28,36 @@
     bottom: -4px;
     left: -4px;
     border: 2px solid transparent;
-    /*border-radius: 50%;*/
     transition: border-color 0.3s;
 }
 
 #speed-btn:hover::after {
     border-color: #1d1e1a;
+}
+
+#speed-modal {
+    position: absolute;
+    top: -304px;
+    right: -7px;
+    display: none;
+    border: 1px solid #1d1e1a;
+}
+
+#speed-modal > div {
+    padding: 6px;
+}
+
+#speed-modal > div:not(:last-child) {
+    border-bottom: 1px solid #1d1e1a;
+}
+
+#speed-custom {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+}
+
+#speed-custom input {
+    width: 44px;
+    margin-left: 4px;
 }

@@ -47,12 +47,16 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     );
 
-    button.addDefaultIcon(
+    button.addToggleIcon(
         'speed-btn',
         'assets/images/speed.svg',
         'assets/images/speed.svg',
-        () => {},
-        () => {}
+        () => {
+            document.getElementById('speed-modal').style.display = 'block';
+        },
+        () => {
+            document.getElementById('speed-modal').style.display = 'none';
+        }
     )
 
     button.addDefaultIcon(
@@ -73,22 +77,26 @@ class Button {
         this.icon.add(containerId, imgSrc);
 
         const iconContainer = document.getElementById(containerId);
+        console.log(iconContainer);
         const icon = iconContainer.children[0];
         iconContainer.addEventListener('click', click);
     }
 
     addToggleIcon(containerId, defaultImgSrc, imgSrc, defaultClick, click) {
         this.icon.add(containerId, defaultImgSrc);
+        let isDefault = true;
 
         const iconContainer = document.getElementById(containerId);
         const icon = iconContainer.children[0];
-        iconContainer.addEventListener('click', (event) => {
-            if (icon.attributes.src.value === defaultImgSrc) {
+        iconContainer.addEventListener('click', () => {
+            if (isDefault) {
                 defaultClick();
                 this.icon.updateSrc(icon, imgSrc)
+                isDefault = false;
             } else {
                 click();
                 this.icon.updateSrc(icon, defaultImgSrc)
+                isDefault = true;
             }
         });
     }

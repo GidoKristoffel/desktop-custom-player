@@ -2,12 +2,13 @@
     position: relative;
     cursor: pointer;
     width: 32px;
+    height: 32px;
+    min-width: 32px;
     border: 1px solid #1d1e1a;
     box-sizing: border-box;
-    padding: 6px;
     user-select: none;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
 }
 
