@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
     );
 
     button.addDefaultIcon(
-        'speed',
+        'speed-btn',
         'assets/images/speed.svg',
         'assets/images/speed.svg',
         () => {},
