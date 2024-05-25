@@ -1,4 +1,4 @@
-#play-btn {
+#speed-btn {
     position: relative;
     cursor: pointer;
     width: 32px;
@@ -11,7 +11,12 @@
     justify-content: center;
 }
 
-#play-btn::after {
+#speed-btn img {
+    width: 18px;
+    height: 18px;
+}
+
+#speed-btn::after {
     content: '';
     position: absolute;
     top: -4px;
@@ -23,12 +28,6 @@
     transition: border-color 0.3s;
 }
 
-#play-btn:hover::after {
+#speed-btn:hover::after {
     border-color: #1d1e1a;
-}
-
-#play-btn img {
-    display: block;
-    width: 18px;
-    height: 18px;
 }
