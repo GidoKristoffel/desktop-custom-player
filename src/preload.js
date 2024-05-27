@@ -66,6 +66,13 @@ window.addEventListener('DOMContentLoaded', () => {
         () => {},
         () => {}
     )
+
+    let speedBtns = document.getElementsByClassName('speed-btn');
+    speedBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            btn.classList.toggle('active');
+        })
+    });
 });
 
 class Button {
