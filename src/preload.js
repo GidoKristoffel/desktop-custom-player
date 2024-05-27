@@ -70,7 +70,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let speedBtns = document.getElementsByClassName('speed-btn');
     speedBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            btn.classList.toggle('active');
+            document.querySelector('.speed-btn.active').classList.toggle('active', false);
+            btn.classList.toggle('active', true);
         })
     });
 });
