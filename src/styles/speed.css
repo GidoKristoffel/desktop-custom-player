@@ -49,11 +49,11 @@
     cursor: pointer;
 }
 
-#speed-modal > .speed-btn {
+#speed-modal > .speed-value {
     position: relative;
 }
 
-#speed-modal > .speed-btn:hover::before, #speed-modal > .speed-btn + .active::before {
+#speed-modal > .speed-value:hover::before, #speed-modal > .speed-value + .active::before {
     content: '';
     position: absolute;
     top: 2px;
@@ -64,7 +64,7 @@
     transition: border-color 0.3s;
 }
 
-#speed-modal > .speed-btn:hover::after, #speed-modal > .speed-btn + .active::after {
+#speed-modal > .speed-value:hover::after, #speed-modal > .speed-value + .active::after {
     content: '';
     position: absolute;
     top: -1px;

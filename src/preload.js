@@ -66,7 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
         () => {},
         () => {}
     )
-
+    console.log(document.getElementsByClassName('speed-btn'));
     let speedBtns = document.getElementsByClassName('speed-btn');
     speedBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
