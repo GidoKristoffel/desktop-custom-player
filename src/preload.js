@@ -57,7 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
         () => {
             document.getElementById('speed-modal').style.display = 'none';
         }
-    )
+    );
 
     button.addDefaultIcon(
         'skip',
@@ -65,15 +65,15 @@ window.addEventListener('DOMContentLoaded', () => {
         'assets/images/skip.svg',
         () => {},
         () => {}
-    )
-    console.log(document.getElementsByClassName('speed-btn'));
-    let speedBtns = document.getElementsByClassName('speed-btn');
-    speedBtns.forEach(btn => {
+    );
+
+    let speedBtns = document.getElementsByClassName('speed-value');
+    for (let btn of speedBtns) {
         btn.addEventListener('click', (e) => {
-            document.querySelector('.speed-btn.active').classList.toggle('active', false);
+            document.querySelector('.speed-value.active').classList.toggle('active', false);
             btn.classList.toggle('active', true);
         })
-    });
+    }
 });
 
 class Button {
