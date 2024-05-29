@@ -70,7 +70,10 @@ window.addEventListener('DOMContentLoaded', () => {
     let speedBtns = document.getElementsByClassName('speed-value');
     for (let btn of speedBtns) {
         btn.addEventListener('click', (e) => {
-            document.querySelector('.speed-value.active').classList.remove('active');
+            const activeBtn = document.querySelector('.speed-value.active');
+            if (activeBtn) {
+                activeBtn.classList.remove('active');
+            }
             btn.classList.add('active');
         })
     }
