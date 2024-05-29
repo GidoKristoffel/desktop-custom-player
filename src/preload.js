@@ -59,19 +59,19 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     );
 
-    button.addDefaultIcon(
-        'skip',
-        'assets/images/skip.svg',
-        'assets/images/skip.svg',
-        () => {},
-        () => {}
-    );
+    // button.addDefaultIcon(
+    //     'skip',
+    //     'assets/images/skip.svg',
+    //     'assets/images/skip.svg',
+    //     () => {},
+    //     () => {}
+    // );
 
     let speedBtns = document.getElementsByClassName('speed-value');
     for (let btn of speedBtns) {
         btn.addEventListener('click', (e) => {
-            document.querySelector('.speed-value.active').classList.toggle('active', false);
-            btn.classList.toggle('active', true);
+            document.querySelector('.speed-value.active').classList.remove('active');
+            btn.classList.add('active');
         })
     }
 });
