@@ -59,13 +59,13 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     );
 
-    // button.addDefaultIcon(
-    //     'skip',
-    //     'assets/images/skip.svg',
-    //     'assets/images/skip.svg',
-    //     () => {},
-    //     () => {}
-    // );
+    button.addDefaultIcon(
+        'skip',
+        'assets/images/skip.svg',
+        'assets/images/skip.svg',
+        () => {},
+        () => {}
+    );
 
     let speedBtns = document.getElementsByClassName('speed-value');
     for (let btn of speedBtns) {
