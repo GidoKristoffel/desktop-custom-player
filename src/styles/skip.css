@@ -1,0 +1,13 @@
+#skip-btn {
+    position: relative;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border: 1px solid #1d1e1a;
+    box-sizing: border-box;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

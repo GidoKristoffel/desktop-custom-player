@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
     );
 
     button.addDefaultIcon(
-        'skip',
+        'skip-btn',
         'assets/images/skip.svg',
         'assets/images/skip.svg',
         () => {},
