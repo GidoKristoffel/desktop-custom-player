@@ -11,3 +11,7 @@
     align-items: center;
     justify-content: center;
 }
+
+#skip-btn img {
+    width: 24px;
+}
