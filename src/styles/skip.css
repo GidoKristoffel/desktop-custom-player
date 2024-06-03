@@ -15,3 +15,18 @@
 #skip-btn img {
     width: 24px;
 }
+
+#skip-btn::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+#skip-btn:hover::after {
+    border-color: #1d1e1a;
+}
