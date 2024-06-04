@@ -1,18 +1,17 @@
-#play-btn {
+button {
     position: relative;
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-    min-width: 32px;
-    border: 1px solid #1d1e1a;
-    box-sizing: border-box;
-    user-select: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: none;
+    border: 1px solid #1d1e1a;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
 }
 
-#play-btn::after {
+button::after {
     content: '';
     position: absolute;
     top: -4px;
@@ -20,16 +19,24 @@
     bottom: -4px;
     left: -4px;
     border: 2px solid transparent;
-    /*border-radius: 50%;*/
     transition: border-color 0.3s;
 }
 
-#play-btn:hover::after {
+button:hover::after {
     border-color: #1d1e1a;
 }
 
-#play-btn img {
+button img {
     display: block;
+}
+
+button .img-18 {
     width: 18px;
     height: 18px;
+}
+
+.btn-32 {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
 }

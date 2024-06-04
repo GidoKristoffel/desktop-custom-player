@@ -1,5 +1,5 @@
 const { ipcRenderer } = require('electron');
-// const Icon = require("./lib/icon");
+const Icon = require('lib/icon');
 // const Button = require("./lib/button");
 
 let data = ipcRenderer.sendSync('get-file-data');
@@ -113,15 +113,15 @@ class Button {
     }
 }
 
-class Icon {
-    add(containerId, imgSrc) {
-        const iconContainer = document.getElementById(containerId);
-        const iconImg = document.createElement('img');
-        iconImg.src = imgSrc;
-        iconContainer.appendChild(iconImg);
-    }
-
-    updateSrc(icon, src) {
-        icon.src = src;
-    }
-}
+// class Icon {
+//     add(containerId, imgSrc) {
+//         const iconContainer = document.getElementById(containerId);
+//         const iconImg = document.createElement('img');
+//         iconImg.src = imgSrc;
+//         iconContainer.appendChild(iconImg);
+//     }
+//
+//     updateSrc(icon, src) {
+//         icon.src = src;
+//     }
+// }
